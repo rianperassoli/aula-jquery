@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>teste jqyery</title>
+
+	<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+
+	<style type="text/css">
+		.ativo{
+			color: red;
+		}
+	</style>
+
+	<script>
+
+		$(document).ready(function(){
+			/* 
+			$('button').click(function(){
+				$('div:eq(1)').css('background', 'red');
+				console.log("Foram encontradas " + $('div').length + " divs")
+			});*/
+			$('div:eq(0)').addClass('ativo');
+
+			var legenda = $('#img1').attr('alt');
+
+			$('#img1').after('<p>' + legenda + '</p>');
+
+			$('button').click(function(){
+				$('#img1').attr('src', 'https://www.google.com.br/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png');
+
+				$('div:eq(2)').toggleClass('ativo');
+			});
+		});
+
+	</script>
+</head>
+<body>
+	<div>
+		Isto é uma DIV
+	</div>
+
+	<div>
+		Isto é uma DIV
+	</div>
+
+	<div>
+		Isto é uma DIV
+	</div>
+
+	<button>Colorir Divs</button>
+
+	<img src="img/teste.png" alt="Isso é uma imagem" id="img1">
+
+</body>
+</html>

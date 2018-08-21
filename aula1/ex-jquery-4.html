@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Exemplo 1</title>
+<style>
+h1 {
+    color: #060;
+}
+</style>
+<script type="text/javascript" src="jquery-2.2.2.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+    $('#bt1').click(function() {
+        $('p').css('background', '#fff');
+        $('div p').css('background', 'red');
+    });
+    $('#bt2').click(function() {
+        $('p').css('background', '#fff');
+        $('div > p').css('background', 'red');
+    });
+    $('#bt3').click(function() {
+        $('p').css('background', '#fff');
+        $('div + p').css('background', 'red');
+    });
+    $('#bt4').click(function() {
+        $('p').css('background', '#fff');
+        $('div ~ p').css('background', 'red');
+    });
+});
+</script>
+</head>
+<body>
+<div>DIV</div>
+<p>Texto dentro de um parágrafo</p>
+<div>Outra DIV</div>
+<p>Outro parágrafo</p>
+<p>Mais um parágrafo</p>
+<div>
+    <p>Parágrafo dentro da div</p>
+    <pre><p>Parágrafo dentro da div e dentro da tag pre</p></pre>
+    <p>Parágrafo dentro da div</p>
+</div>
+<p>Parágrafo fora da DIV</p>
+<button id="bt1">div p</button>
+<button id="bt2">div &gt; p</button>
+<button id="bt3">div + p</button>
+<button id="bt4">div ~ p</button>
+</body>
+</html>

@@ -1,0 +1,56 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    text-indent: 0;
+}
+
+#menu {
+    width: 50%;
+    background: #ccc;
+    border: 1px solid #999;
+    box-shadow: 2px 2px 2px #666;
+}
+
+#menu h2 {
+    background: #369;
+    margin: 0;
+    padding: 5px 10px;
+}
+
+#menu h2 a {
+    color: #fff;
+    text-decoration: none;
+}
+
+#menu ul {
+    padding: 0;
+}
+
+#menu ul li {
+    border-bottom: 1px dotted #000;
+    list-style: none;
+    margin: 0;
+    padding: 5px 10px;
+    text-indent: 0;
+}
+
+#menu ul li a {
+    color: #369;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#menu ul li a:hover {
+    color: #ff0;
+}
+
+#exercicios li {
+    list-style: circle;
+    text-indent: 10px;
+    margin-left: 20px;
+}
+
+.red {
+    background: #f66;
+}

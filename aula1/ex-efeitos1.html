@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Exemplo 1</title>
+<style>
+body {
+    background: green;
+}
+h1 {
+    color: #060;
+}
+input {
+    border: 1px solid #ccc;
+    margin: 2px 5px;
+    width: 30px;
+}
+</style>
+<script type="text/javascript" src="jquery-2.2.2.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+    $('#bt1').click(function() {
+        $('img').show();
+    });
+    $('#bt2').click(function() {
+        $('img').hide();
+    });
+    $('#bt3').click(function() {
+        $('img').toggle();
+    });
+    $('#bt4').click(function() {
+        $('img').slideDown();
+    });
+    $('#bt5').click(function() {
+        $('img').slideUp();
+    });
+    $('#bt6').click(function() {
+        $('img').slideToggle();
+    });
+    $('#bt7').click(function() {
+        $('img').fadeIn();
+    });
+    $('#bt8').click(function() {
+        $('img').fadeOut();
+    });
+    $('#bt9').click(function() {
+        $('img').fadeTo('slow', $('#to').val());
+    });
+});
+</script>
+</head>
+<body>
+<button id="bt1">.show()</button>
+<button id="bt2">.hide()</button>
+<button id="bt3">.toggle()</button>
+<button id="bt4">.slideDown()</button>
+<button id="bt5">.slideUp()</button>
+<button id="bt6">.slideToggle()</button>
+<button id="bt7">.fadeIn()</button>
+<button id="bt8">.fadeOut()</button>
+<button id="bt9">.fadeTo</button>('slow', <input type="text" value="0.5" id="to" />)
+<p><img src="tirinha1062.png" alt="tirinha" /></p>
+</body>
+</html>

@@ -1,0 +1,44 @@
+header {
+
+	
+	width: 100%;
+	text-align: center;
+    padding: 40px;
+    border: 1px solid rgba(0, 0, 0, .3)
+
+    background: rgb(181,189,200);
+    background: -moz-linear-gradient(top, rgba(181,189,200,1) 0%, rgba(130,140,149,1) 36%, rgba(40,52,59,1) 100%);
+    background: -webkit-linear-gradient(top, rgba(181,189,200,1) 0%,rgba(130,140,149,1) 36%,rgba(40,52,59,1) 100%);
+    background: linear-gradient(to bottom, rgba(181,189,200,1) 0%,rgba(130,140,149,1) 36%,rgba(40,52,59,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b5bdc8', endColorstr='#28343b',GradientType=0 );
+}
+
+.jssorl-009-spin img {
+    animation-name: jssorl-009-spin;
+    animation-duration: 1.6s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.jssorb053 .i {position:absolute;cursor:pointer;}
+.jssorb053 .i .b {fill:#fff;fill-opacity:0.5;}
+.jssorb053 .i:hover .b {fill-opacity:.7;}
+.jssorb053 .iav .b {fill-opacity: 1;}
+.jssorb053 .i.idn {opacity:.3;}
+
+.jssora093 {display:block;position:absolute;cursor:pointer;}
+.jssora093 .c {fill:none;stroke:#fff;stroke-width:400;stroke-miterlimit:10;}
+.jssora093 .a {fill:none;stroke:#fff;stroke-width:400;stroke-miterlimit:10;}
+.jssora093:hover {opacity:.8;}
+.jssora093.jssora093dn {opacity:.6;}
+.jssora093.jssora093ds {opacity:.3;pointer-events:none;}
+
+@keyframes jssorl-009-spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}

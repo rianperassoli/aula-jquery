@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Exemplo 1</title>
+<style>
+td {
+    border: 1px solid #ccc;
+    font-size: 0.9em;
+    padding: 3px 5px;
+}
+table {
+    border-collapse: collapse;
+}
+</style>
+<script type="text/javascript" src="jquery-2.2.2.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+    $('#bt1').click(function() {
+        $('tr').css('background', '#fff');
+        $('tr:first').css('background', '#999');
+    });
+    $('#bt2').click(function() {
+        $('tr').css('background', '#fff');
+        $('tr:last').css('background', '#999');
+    });
+    $('#bt3').click(function() {
+        $('tr').css('background', '#fff');
+        $('tr:not(tr:first)').css('background', '#999');
+    });
+    $('#bt4').click(function() {
+        $('tr').css('background', '#fff');
+        $('tr:even').css('background', '#999');
+    });
+    $('#bt5').click(function() {
+        $('tr').css('background', '#fff');
+        $('tr:odd').css('background', '#999');
+    });
+    $('#t1 td').click(function() {
+        $('#t1 td').css('background', 'white');
+        $(this).css('background', 'red');
+    });
+    $('#t2 td').click(function() {
+        $('#t2 td').css('background', 'white');
+        $(this).css('background', 'green');
+    });
+});
+</script>
+</head>
+<body>
+<table cellspacing="0" cellpadding="0" id="t1">
+<tr><td>Alguma coisa</td><td>5</td><td>97</td></tr>
+<tr><td>Alguma coisa</td><td>5</td><td>97</td></tr>
+<tr><td>Alguma coisa</td><td>5</td><td>97</td></tr>
+<tr><td>Alguma coisa</td><td>5</td><td>97</td></tr>
+<tr><td>Alguma coisa</td><td>5</td><td>97</td></tr>
+<tr><td>Alguma coisa</td><td>5</td><td>97</td></tr>
+<tr><td>Alguma coisa</td><td>5</td><td>97</td></tr>
+<tr><td>Alguma coisa</td><td>5</td><td>97</td></tr>
+</table>
+<p>&nbsp;</p>
+<table cellspacing="0" cellpadding="0" id="t2">
+<tr><td>Alguma coisa</td><td>5</td><td>97</td></tr>
+<tr><td>Alguma coisa</td><td>5</td><td>97</td></tr>
+<tr><td>Alguma coisa</td><td>5</td><td>97</td></tr>
+<tr><td>Alguma coisa</td><td>5</td><td>97</td></tr>
+<tr><td>Alguma coisa</td><td>5</td><td>97</td></tr>
+<tr><td>Alguma coisa</td><td>5</td><td>97</td></tr>
+<tr><td>Alguma coisa</td><td>5</td><td>97</td></tr>
+<tr><td>Alguma coisa</td><td>5</td><td>97</td></tr>
+</table>
+<button id="bt1">tr:first</button>
+<button id="bt2">tr:last</button>
+<button id="bt3">tr:not(tr:first)</button>
+<button id="bt4">tr:even</button>
+<button id="bt5">tr:odd</button>
+</body>
+</html>

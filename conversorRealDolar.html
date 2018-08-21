@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Conversor Dolar/Real</title>
+
+	<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+
+	<style type="text/css">
+		.ativo{
+			color: red;
+		}
+	</style>
+
+	<script>
+
+		$(document).ready(function(){
+			$('#dolar').focus();
+
+			$('#dolarReal').click(function(){
+				var dolar = $('#dolar').val();
+
+				var real = dolar * 3.71;
+
+				$('#real').val(real);
+
+				$('<p>dolar para real</p>').appendTo('body');
+
+			});
+
+			$('#realDolar').click(function(){
+				var real = $('#real').val();
+
+				var dolar = real / 3.71;
+
+				$('#dolar').val(dolar);
+
+				$('body').append('<p>real para dolar</p>');
+
+			});
+
+			$('#dolar').change(function(){
+				var dolar = $('#dolar').val();
+
+				var real = dolar * 3.71;
+
+				$('#real').val(real);
+
+				$('<p>dolar para real</p>').appendTo('body');
+
+			});
+
+			$('#real').keyup(function(){
+				var real = $('#real').val();
+
+				var dolar = real / 3.71;
+
+				$('#dolar').val(dolar);
+
+				$('body').append('<p>real para dolar</p>');
+
+			});
+			
+		});
+
+	</script>
+
+</head>
+<body>
+	Dolar <input type="number" id="dolar"/>
+	<br/>
+	Real <input type="number" id="real"/>
+
+	<br/>
+
+	<button id="dolarReal">Converter para reais️</button>
+
+	<button id="realDolar">Converter para dolar</button>
+</body>
+</html>

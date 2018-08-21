@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Exemplo 1</title>
+<style>
+h1 {
+    color: #060;
+}
+</style>
+<script type="text/javascript">
+window.onload = function () {
+    document.getElementById('btn-vermelho').onclick = mudaCor;
+};
+
+function mudaCor()
+{
+    document.getElementById('cor').style.color='#FF6600';
+}
+</script>
+</head>
+<body>
+<h1 id="cor">Vamos mudar a cor deste cabeçalho</h1>
+<button id="btn-vermelho">Vermelho</button>
+</body>
+</html>
