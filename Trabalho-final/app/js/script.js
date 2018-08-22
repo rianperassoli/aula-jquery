@@ -1,4 +1,70 @@
+document.write('<style>.noscript { display: none; }</style>');
+
 $(document).ready(function () {
+    $( "#datanascimento" ).datepicker();
+
+    $("#fone" )
+    .mask("(99) 9999 9-9999")
+    .focusout(function (event) {  
+        var target, phone, element;  
+        target = (event.currentTarget) ? event.currentTarget : event.srcElement;  
+        phone = target.value.replace(/\D/g, '');
+        element = $(target);  
+        element.unmask();  
+        if(phone.length > 10) {  
+            element.mask("(99) 9 9999-9999");  
+        } else {  
+            element.mask("(99) 9999-9999");  
+        }  
+    });
+
+    $("#formulario").validate({
+      rules:{
+        datanascimento:{
+          required: true, minlength: 10
+        },
+        nome:{
+          required: true
+        },
+        email:{
+          required: true, email: true
+        },
+        fone:{
+          required: true, minlength: 14
+        },
+        estado:{
+          required: true
+        },
+        cidade:{
+          required: true
+        }
+      },
+
+      messages:{
+        datanascimento:{
+          required: "<br><i><strong> * Digite a data de nascimento</strong></i>",
+          minlength: "<br><i><strong> * Digite uma data válida</strong></i>"
+        },
+        nome:{
+          required: "<br><i><strong> * Digite o seu nome</strong></i>"
+        },
+        email:{
+          required: "<br><i><strong> * Digite o seu email</strong></i>",
+          email: "<br><i><strong> * Digite um email válido</strong></i>"
+        },
+        fone:{
+          required: "<br><i><strong> * Digite o seu telefone</strong></i>",
+          minlength: "<br><i><strong> * O seu telefone deve conter, no mínimo, 8 caracteres</strong></i>"
+        },
+        estado:{
+          required: "<br><i><strong> * Escolha o estado</strong></i>"
+        },
+        cidade:{
+          required: "<br><i><strong> * Escolha a cidade</strong></i>"
+        }
+      }
+  });
+
     $.getJSON('json/estados-cidades.json', function( data ) {
         var itens = '<option value="">- Selecione um estado -</option>';
 
@@ -27,6 +93,59 @@ $(document).ready(function () {
 			$("#cidade").html(itensCidades);
         	
         }).change();
+    });
+
+
+    // We only want these styles applied when javascript is enabled
+    $('div.navigation').css({'width' : '300px', 'float' : 'left'});
+    $('div.content').css('display', 'block');
+
+    // Initially set opacity on thumbs and add
+    // additional styling for hover effect on thumbs
+    var onMouseOutOpacity = 0.67;
+    $('#thumbs ul.thumbs li').opacityrollover({
+      mouseOutOpacity:   onMouseOutOpacity,
+      mouseOverOpacity:  1.0,
+      fadeSpeed:         'fast',
+      exemptionSelector: '.selected'
+    });
+    
+    // Initialize Advanced Galleriffic Gallery
+    var gallery = $('#thumbs').galleriffic({
+      delay:                     2500,
+      numThumbs:                 15,
+      preloadAhead:              10,
+      enableTopPager:            true,
+      enableBottomPager:         true,
+      maxPagesToShow:            7,
+      imageContainerSel:         '#slideshow',
+      controlsContainerSel:      '#controls',
+      captionContainerSel:       '#caption',
+      loadingContainerSel:       '#loading',
+      renderSSControls:          true,
+      renderNavControls:         true,
+      playLinkText:              'Play Slideshow',
+      pauseLinkText:             'Pause Slideshow',
+      prevLinkText:              '&lsaquo; Previous Photo',
+      nextLinkText:              'Next Photo &rsaquo;',
+      nextPageLinkText:          'Next &rsaquo;',
+      prevPageLinkText:          '&lsaquo; Prev',
+      enableHistory:             false,
+      autoStart:                 false,
+      syncTransitions:           true,
+      defaultTransitionDuration: 900,
+      onSlideChange:             function(prevIndex, nextIndex) {
+        // 'this' refers to the gallery, which is an extension of $('#thumbs')
+        this.find('ul.thumbs').children()
+          .eq(prevIndex).fadeTo('fast', onMouseOutOpacity).end()
+          .eq(nextIndex).fadeTo('fast', 1.0);
+      },
+      onPageTransitionOut:       function(callback) {
+        this.fadeTo('fast', 0.0, callback);
+      },
+      onPageTransitionIn:        function() {
+        this.fadeTo('fast', 1.0);
+      }
     });
 
 });

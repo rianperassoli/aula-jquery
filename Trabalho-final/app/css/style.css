@@ -1,6 +1,5 @@
-header {
 
-	
+header {	
 	width: 100%;
 	text-align: center;
     padding: 40px;
@@ -11,6 +10,32 @@ header {
     background: -webkit-linear-gradient(top, rgba(181,189,200,1) 0%,rgba(130,140,149,1) 36%,rgba(40,52,59,1) 100%);
     background: linear-gradient(to bottom, rgba(181,189,200,1) 0%,rgba(130,140,149,1) 36%,rgba(40,52,59,1) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b5bdc8', endColorstr='#28343b',GradientType=0 );
+}
+
+#conteudo {
+    width: 1350px;
+    height: 750px;
+    margin: 0 auto;
+}
+
+#galeria {
+    float: left;
+}
+
+#formulario {
+    text-align: left;
+    position: relative;
+    width: 440px;
+    height: 280px;
+    float: left;
+}
+
+#enviar{
+    width: 100%;
+}
+
+.white{
+    color: white;
 }
 
 .jssorl-009-spin img {
