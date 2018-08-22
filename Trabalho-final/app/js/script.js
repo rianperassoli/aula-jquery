@@ -1,10 +1,20 @@
 document.write('<style>.noscript { display: none; }</style>');
 
+$('#scrollUpTheme').attr('href', 'css/themes/pill.css?1.1');
+$('.tab-switch').addClass('active');
+
+
 $(document).ready(function () {
+
+    $.scrollUp({
+        animation: 'slide',
+        scrollText: 'Voltar ao topo'
+    });
+            
     $( "#datanascimento" ).datepicker();
 
     $("#fone" )
-    .mask("(99) 9999 9-9999")
+    .mask("(99) 99999-9999")
     .focusout(function (event) {  
         var target, phone, element;  
         target = (event.currentTarget) ? event.currentTarget : event.srcElement;  
@@ -63,7 +73,7 @@ $(document).ready(function () {
           required: "<br><i><strong> * Escolha a cidade</strong></i>"
         }
       }
-  });
+    });
 
     $.getJSON('json/estados-cidades.json', function( data ) {
         var itens = '<option value="">- Selecione um estado -</option>';
